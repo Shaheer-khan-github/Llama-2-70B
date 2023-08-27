@@ -15,3 +15,8 @@ This is a template repository to make it easy to get started creating a UI modul
 6. After you're tried things out locally, push your changes to github and get the git commit URL from there in order to create a module in Clarifai. 
 7. Go to any app you can create in within Clarifai, select Modules on the left and "Create Module" button, then follow the steps.
 
+### Here is the link of app deployed on Clarifai:
+Note: It was created on free tier and maybe not access after sometime.
+[Link](https://clarifai.com/36302/Llama2_Chat/installed_module_versions/llamachat2/app)
+
+![Preview of the Application](<Llama 2.JPG>)
