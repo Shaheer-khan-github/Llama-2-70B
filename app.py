@@ -4,28 +4,31 @@ from clarifai_utils.modules.css import ClarifaiStreamlitCSS
 st.set_page_config(layout="wide")
 
 ClarifaiStreamlitCSS.insert_default_css(st)
+
 from langchain.llms import Clarifai
 
-# title and side bar
-st.title("Chat with Llama 2.0")
+# Title & Sidebar Image
 
-# get the Clarifi API Key
+st.title("🦙Chat with Llama 2 (70B) Model")
+st.sidebar.image("https://clarifai.com/favicon.svg", width=100)
+
+# Get the Clarifai API Key
+
 with st.sidebar:
-    clarifai_pat = st.text_input("Clarifi API Key",type="password")
+    clarifai_pat = st.text_input("Clarifai API Key", type="password")
 
+
+# Function to Generate Response
 
 def generate(text):
-    llms = Clarifai(pat=clarifai_pat,user_id='meta',app_id='llama-2',model_id='llma2-70b-chat')
-    st.info(llms(text))
+    llm = Clarifai(pat=clarifai_pat, user_id='meta', app_id='Llama-2', model_id='llama2-13b-chat')
+    st.info(llm(text))
 
-# Form that takes text as input and return the response from the model
-with st.form('myform'):
-    text=st.text_area('Enter the text',"How to evaluate the ML models?")
-    submit=st.form_submit_button('Submit')
+# Form that takes text as imput and return the response from the Model
+with st.form("my_form"):
+    text = st.text_area("Enter text:", "How to Evaluate ML Models?")
+    submitted = st.form_submit_button("Submit")
     if not clarifai_pat:
-        st.info("Please add your clarifai PAT to continue")
-    elif  submit:
-        generate(text)
-
-# Footer   
-# st.markdown("please select a specific page from the sidebar to the left")
+        st.info("Please add your Clarifai PAT to continue.")
+    elif submitted:
+      generate(text)
