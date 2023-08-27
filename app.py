@@ -31,4 +31,4 @@ with st.form("my_form"):
     if not clarifai_pat:
         st.info("Please add your Clarifai PAT to continue.")
     elif submitted:
-      generate(text)
+        generate(text)
